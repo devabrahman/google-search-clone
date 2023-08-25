@@ -49,14 +49,7 @@ function makeList(arr, selector = suggestionsList) {
 
 // check is input focused
 getInput.addEventListener("focus", (e) => {
-  suggestionsList.style.display = "block";
   listHighlight();
-});
-ul.addEventListener("hover", () => {
-  suggestionsList.style.display = "block";
-});
-getInput.addEventListener("blur", (e) => {
-  suggestionsList.style.display = "none";
 });
 
 getInput.addEventListener("keyup", (e) => {
@@ -70,7 +63,7 @@ function getRuntimeText() {
   const value = getInput.value.toLowerCase();
   listofMatches.forEach((item, i) => {
     const alowValue = item.toLowerCase();
-    const re = new RegExp(`(\w*(?:[${value}]{3,})\w*\w*)`);
+    const re = new RegExp(`(\w*(?:[${value}]{2,})\w*\w*)`);
     // const re = /`(\w*(?:[ang]{2,})\w*\w*)`/;
 
     const match = alowValue.match(re);
