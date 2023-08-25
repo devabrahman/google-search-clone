@@ -97,7 +97,7 @@ const setValueToForm = (i) => {
 function listHighlight() {
   const ul = document.querySelector("#suggestion");
 
-  var index = null;
+  let index = null;
   // Set up a key event handler for the document
   document.addEventListener(
     "keydown",
